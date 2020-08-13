@@ -1,0 +1,174 @@
+2019-10-30 18:01:02,149 - test - INFO - **********SSH connect OK**********
+2019-10-30 18:01:02,149 - test - INFO - ##########测试固件升级##########
+2019-10-30 18:01:02,150 - test - INFO - **********下载最新固件**********
+2019-10-30 18:01:02,150 - test - INFO - cd /tmp && tftp -g -l R3_V1.0.1826.dakota_huawei_Debug_20191030.img 192.168.102.2
+2019-10-30 18:01:15,155 - test - INFO - ls -al
+2019-10-30 18:03:15,256 - test - INFO - **********升级最新固件**********
+2019-10-30 18:03:15,256 - test - INFO - sysupgrade /tmp/R3_V1.0.1826.dakota_huawei_Debug_20191030.img
+2019-10-30 18:13:35,966 - test - INFO - **********开始Ping设备**********
+2019-10-30 18:13:39,000 - test - INFO - ##########测试升级结果##########
+2019-10-30 18:13:39,000 - test - INFO - **********检查设备当前版本**********
+2019-10-30 18:13:46,109 - test - INFO - **********SSH connect OK**********
+2019-10-30 18:13:46,109 - test - INFO - cfg.lua get_version
+2019-10-30 18:13:53,019 - test - INFO - **********SSH connect OK**********
+2019-10-30 18:13:53,019 - test - INFO - ##########测试端口状态设置##########
+2019-10-30 18:13:53,019 - test - INFO - **********设置端口状态**********
+2019-10-30 18:13:53,066 - test - INFO - cfg.lua set_apply ethmanage.@e_port[0].enabled_status=1
+2019-10-30 18:13:54,753 - test - INFO - cfg.lua get ethmanage.@e_port[0].enabled_status
+2019-10-30 18:13:55,083 - test - INFO - ##########测试端口vlan设置##########
+2019-10-30 18:13:55,083 - test - INFO - **********设置所有端口VLAN**********
+2019-10-30 18:13:55,169 - test - INFO - cfg.lua set_apply network.@interface[3].vlan_id=4094
+2019-10-30 18:13:55,645 - test - INFO - cfg.lua set_apply ethmanage.@e_port[0].vlan_id=4094
+2019-10-30 18:13:56,149 - test - INFO - cfg.lua set_apply ethmanage.@e_port[1].vlan_id=4094
+2019-10-30 18:13:56,688 - test - INFO - ##########测试L2DCN IP地址模式设置##########
+2019-10-30 18:13:56,689 - test - INFO - **********设置DCN IP分配方式**********
+2019-10-30 18:13:56,770 - test - INFO - cfg.lua set_apply network.@interface[3].proto='static'
+2019-10-30 18:13:57,272 - test - INFO - cfg.lua set_apply_t network.@interface[3].ipaddr='129.9.2.205' 0
+2019-10-30 18:13:58,820 - test - INFO - cfg.lua get network.@interface[3].proto
+2019-10-30 18:13:59,078 - test - INFO - ##########测试以太口带宽设置##########
+2019-10-30 18:13:59,079 - test - INFO - **********设置以太DCN带宽**********
+2019-10-30 18:13:59,168 - test - INFO - cfg.lua set_apply network.@interface[3].eth_bandwidth=1000
+2019-10-30 18:13:59,738 - test - INFO - cfg.lua get network.@interface[3].eth_bandwidth
+2019-10-30 18:14:00,021 - test - INFO - ##########测试空口带宽设置##########
+2019-10-30 18:14:00,022 - test - INFO - **********设置空口DCN带宽**********
+2019-10-30 18:14:00,127 - test - INFO - cfg.lua set_apply network.@interface[3].wifi_bandwidth=1000
+2019-10-30 18:14:00,713 - test - INFO - cfg.lua get network.@interface[3].wifi_bandwidth
+2019-10-30 18:14:01,058 - test - INFO - ##########测试动态MAC学习容量设置##########
+2019-10-30 18:14:01,059 - test - INFO - **********设置DCN动态MAC地址容量**********
+2019-10-30 18:14:01,148 - test - INFO - cfg.lua set_apply network.@interface[3].max_mac=100
+2019-10-30 18:14:01,642 - test - INFO - cfg.lua get network.@interface[3].max_mac
+2019-10-30 18:14:01,918 - test - INFO - ##########测试静态MAC学习容量设置##########
+2019-10-30 18:14:01,919 - test - INFO - **********设置DCN静态MAC地址容量**********
+2019-10-30 18:14:02,000 - test - INFO - cfg.lua set network.dcn.static_mac=100
+2019-10-30 18:14:02,549 - test - INFO - cfg.lua get network.dcn.static_mac
+2019-10-30 18:14:02,938 - test - INFO - ##########测试动态MAC老化时间设置##########
+2019-10-30 18:14:02,938 - test - INFO - **********设置DCN动态MAC老化时间**********
+2019-10-30 18:14:03,029 - test - INFO - cfg.lua set_apply network.@interface[3].age_time=100
+2019-10-30 18:14:03,576 - test - INFO - cfg.lua get network.@interface[3].age_time
+2019-10-30 18:14:03,913 - test - INFO - ##########测试DCN报文优先级设置##########
+2019-10-30 18:14:03,914 - test - INFO - **********设置DCN报文优先级**********
+2019-10-30 18:14:04,006 - test - INFO - cfg.lua set_apply network.@interface[3].priority=7
+2019-10-30 18:14:04,576 - test - INFO - cfg.lua get network.@interface[3].priority
+2019-10-30 18:14:04,866 - test - INFO - ##########测试获取MAC容量##########
+2019-10-30 18:14:04,866 - test - INFO - **********查询DCN动态MAC地址容量**********
+2019-10-30 18:14:04,948 - test - INFO - cfg.lua get network.@interface[3].max_mac
+2019-10-30 18:14:11,588 - test - INFO - **********SSH connect OK**********
+2019-10-30 18:14:11,589 - test - INFO - ##########测试使能CFM##########
+2019-10-30 18:14:11,589 - test - INFO - **********使能CFM**********
+2019-10-30 18:14:11,624 - test - INFO - cfg.lua set cfm.@cfm[0].enable=1
+2019-10-30 18:14:12,148 - test - INFO - cfg.lua get cfm.@cfm[0].enable
+2019-10-30 18:14:12,504 - test - INFO - ##########测试创建MD##########
+2019-10-30 18:14:12,504 - test - INFO - **********创建 CFM MD**********
+2019-10-30 18:14:12,588 - test - INFO - uci show cfm | grep -w "@md"|grep MD0 | wc -l
+2019-10-30 18:14:12,739 - test - INFO - cfg.lua add cfm md 1
+2019-10-30 18:14:13,351 - test - INFO - cfg.lua set cfm.@md[0].md_name=MD0
+2019-10-30 18:14:13,829 - test - INFO - cfg.lua set cfm.@md[0].md_level=4
+2019-10-30 18:14:14,319 - test - INFO - cfg.lua set cfm.@md[0].md_index=2
+2019-10-30 18:14:14,943 - test - INFO - cfg.lua add cfm md 2
+2019-10-30 18:14:15,677 - test - INFO - uci show cfm | grep -w "@md"|grep MD0 | wc -l
+2019-10-30 18:14:15,833 - test - INFO - ##########测试创建MA##########
+2019-10-30 18:14:15,834 - test - INFO - **********创建 CFM MA**********
+2019-10-30 18:14:15,921 - test - INFO - uci show cfm | grep -w "@ma"|grep ma_name | wc -l
+2019-10-30 18:14:16,039 - test - INFO - cfg.lua add cfm ma 1
+2019-10-30 18:14:16,640 - test - INFO - cfg.lua set cfm.@ma[0].md_name=MD0
+2019-10-30 18:14:17,136 - test - INFO - cfg.lua set cfm.@ma[0].ma_name=MA0
+2019-10-30 18:14:17,662 - test - INFO - cfg.lua set cfm.@ma[0].ma_index=2
+2019-10-30 18:14:18,290 - test - INFO - cfg.lua set cfm.@ma[0].service_id=1
+2019-10-30 18:14:18,930 - test - INFO - cfg.lua set cfm.@ma[0].cc_period=1000
+2019-10-30 18:14:19,409 - test - INFO - cfg.lua set cfm.@ma[0].remote_mep_id=1
+2019-10-30 18:14:19,941 - test - INFO - cfg.lua add cfm ma 2
+2019-10-30 18:14:20,524 - test - INFO - uci show cfm | grep -w "@ma"|grep MA0 | wc -l
+2019-10-30 18:14:20,653 - test - INFO - ##########测试创建MEP##########
+2019-10-30 18:14:20,654 - test - INFO - **********创建 CFM MEP**********
+2019-10-30 18:14:20,741 - test - INFO - cfg.lua add cfm mep 1
+2019-10-30 18:14:21,609 - test - INFO - cfg.lua set cfm.@mep[0].md_name=MD0
+2019-10-30 18:14:22,310 - test - INFO - cfg.lua set cfm.@mep[0].ma_name=MA0
+2019-10-30 18:14:22,917 - test - INFO - cfg.lua set cfm.@mep[0].port_id=2
+2019-10-30 18:14:23,445 - test - INFO - cfg.lua set cfm.@mep[0].mep_id=2
+2019-10-30 18:14:23,972 - test - INFO - cfg.lua set cfm.@mep[0].cc_status='1'
+2019-10-30 18:14:24,529 - test - INFO - cfg.lua set cfm.@mep[0].vlan='2'
+2019-10-30 18:14:25,245 - test - INFO - cfg.lua set cfm.@mep[0].direction=ingress
+2019-10-30 18:14:25,785 - test - INFO - cfg.lua add cfm mep 2
+2019-10-30 18:14:26,355 - test - INFO - uci show cfm | grep -w "@mep"|grep MA0 | wc -l
+2019-10-30 18:14:26,464 - test - INFO - ##########测试创建MIP##########
+2019-10-30 18:14:26,465 - test - INFO - **********创建 CFM MIP**********
+2019-10-30 18:14:26,549 - test - INFO - cfg.lua add cfm mip 1
+2019-10-30 18:14:27,091 - test - INFO - cfg.lua set cfm.@mip[0].md_name=MD0
+2019-10-30 18:14:27,684 - test - INFO - cfg.lua set cfm.@mip[0].port_id=2
+2019-10-30 18:14:28,167 - test - INFO - cfg.lua set cfm.@mip[0].mip_id=1
+2019-10-30 18:14:28,776 - test - INFO - cfg.lua add cfm mip 2
+2019-10-30 18:14:29,311 - test - INFO - uci show cfm | grep -w "@mip"|grep MD0 | wc -l
+2019-10-30 18:14:29,409 - test - INFO - ##########测试保存CFM配置##########
+2019-10-30 18:14:29,491 - test - INFO - cfg.lua set_apply cfm.@cfm[0].action='1'
+2019-10-30 18:14:35,532 - test - INFO - ##########测试CC连通性##########
+2019-10-30 18:14:35,532 - test - INFO - **********查看CC状态**********
+2019-10-30 18:14:35,600 - test - INFO - cfm_utility -m query
+2019-10-30 18:14:35,804 - test - INFO - {
+	"mep_list": "<MPID=1 Mac=54:41:ab:d0:91:e8 Status=Link Up>",
+	"fdb_list": "<Mac=54:41:AB:D0:91:E8 MEPID=1 Port_name=ath1 Vlan=2 LastTime=77924 Survival_time=77959>",
+	"local_mep_list": "<PortName=eth0 md=MD0 ma=MA0 mpid=2 rmpid=1 level=4 Type=MEP Vlan=2 cc_enable=True cc_interval=1000 micro secs>",
+	"local_mip_list": "<PortName=eth0 md=MD0 mpid=1 level=4 Type=MIP>",
+	"local_mip_Implicitly_list": "<PortName=eth1 md=MD0 ma=MA0 level=4 Type=MIP_Implicitly Vlan=2><PortName=ath1 md=MD0 ma=MA0 level=4 Type=MIP_Implicitly Vlan=2>",
+	"local_mip_Background_list": "<PortName=eth0 md=E_Lan_Line_dcn ma=E_Lan_Line_dcn level=4 Type=MIP_Background Vlan=4094><PortName=eth1 md=E_Lan_Line_dcn ma=E_Lan_Line_dcn level=4 Type=MIP_Background Vlan=4094><PortName=ath1 md=E_Lan_Line_dcn ma=E_Lan_Line_dcn level=4 Type=MIP_Background Vlan=4094><PortName=eth0 md=E_Lan_Line_1d ma=E_Lan_Line_1d level=4 Type=MIP_Background Vlan=1><PortName=eth1 md=E_Lan_Line_1d ma=E_Lan_Line_1d level=4 Type=MIP_Background Vlan=1><PortName=ath1 md=E_Lan_Line_1d ma=E_Lan_Line_1d level=4 Type=MIP_Background Vlan=1>",
+	"status_code": 0
+}
+
+2019-10-30 18:14:35,804 - test - INFO - ##########LB 测试##########
+2019-10-30 18:14:35,805 - test - INFO - **********开始LB测试**********
+2019-10-30 18:14:35,888 - test - INFO - cfm_utility -m lb -i 2 1
+2019-10-30 18:14:37,515 - test - INFO - 64 bytes from 54:41:ab:d0:91:e8, sequence 27417413, 87 ms
+64 bytes from 54:41:ab:d0:91:e8, sequence 27417414, 106 ms
+64 bytes from 54:41:ab:d0:91:e8, sequence 27417415, 100 ms
+64 bytes from 54:41:ab:d0:91:e8, sequence 27417416, 94 ms
+64 bytes from 54:41:ab:d0:91:e8, sequence 27417417, 100 ms
+----LB STATISTIC INFORMATION----
+MDIndex:	 2
+MAIndex:	 2
+MEPID:	 2
+Sink Type:	 MP Mac Address
+Sink MP MAC:	 54:41:AB:D0:91:E8
+SendNum:	 5
+ReceiveNum:	 5
+LossRate:	 0
+MinTimeDelay(ms):	 87
+MaxTimeDelay(ms):	 106
+AverageTimeDelay(ms):	 97
+
+2019-10-30 18:14:37,516 - test - INFO - ##########LT 测试##########
+2019-10-30 18:14:37,516 - test - INFO - **********开始LT测试**********
+2019-10-30 18:14:37,600 - test - INFO - cfm_utility -m lt -i 2 1
+
+2019-10-30 18:14:39,123 - test - INFO - Sending CFM LTM probe to 54:41:AB:D0:91:E8 By ath1 ttl 255: LTM with id 1562901178
+	reply from 54:41:ab:d0:91:e8, id=1562901178, ttl=254, RlyHit
+
+2019-10-30 18:14:39,124 - test - INFO - ##########测试查看CFM配置##########
+2019-10-30 18:14:39,124 - test - INFO - **********查看CFM配置**********
+2019-10-30 18:14:39,236 - test - INFO - uci show cfm
+2019-10-30 18:14:46,365 - test - INFO - **********SSH connect OK**********
+2019-10-30 18:14:46,366 - test - INFO - ##########测试无线连接状态##########
+2019-10-30 18:14:46,366 - test - INFO - **********查看无线连接情况**********
+2019-10-30 18:14:46,414 - test - INFO - cfg.lua get_connected_ap | grep 9c:b7:93 | wc -l
+2019-10-30 18:14:53,413 - test - INFO - **********SSH connect OK**********
+2019-10-30 18:14:53,413 - test - INFO - ##########测试新增只读用户##########
+2019-10-30 18:14:53,414 - test - INFO - **********增加只读账户**********
+2019-10-30 18:14:53,445 - test - INFO - cfg.lua show usermanage | grep =user_cfg | wc -l
+2019-10-30 18:14:53,687 - test - INFO - cfg.lua add usermanage user_cfg
+2019-10-30 18:14:54,441 - test - INFO - cfg.lua set usermanage.@user_cfg[3].user_level='0' 
+2019-10-30 18:14:55,436 - test - INFO - cfg.lua set usermanage.@user_cfg[3].password='Changeme_123' 
+2019-10-30 18:14:56,244 - test - INFO - cfg.lua set_apply_t usermanage.@user_cfg[3].user_name='lct2' 1
+2019-10-30 18:14:57,238 - test - INFO - cfg.lua show usermanage | grep lct2
+2019-10-30 18:14:57,532 - test - INFO - ##########测试新增管理员用户##########
+2019-10-30 18:14:57,532 - test - INFO - **********增加管理员账户**********
+2019-10-30 18:14:57,616 - test - INFO - cfg.lua show usermanage | grep =user_cfg | wc -l
+2019-10-30 18:14:58,005 - test - INFO - cfg.lua add usermanage user_cfg
+2019-10-30 18:14:58,787 - test - INFO - cfg.lua set usermanage.@user_cfg[3].user_level='1' 
+2019-10-30 18:14:59,573 - test - INFO - cfg.lua set usermanage.@user_cfg[3].password='Changeme_123' 
+2019-10-30 18:15:00,522 - test - INFO - cfg.lua set_apply_t usermanage.@user_cfg[3].user_name='lct3' 1
+2019-10-30 18:15:15,041 - test - INFO - cfg.lua show usermanage | grep lct3
+2019-10-30 18:15:15,270 - test - INFO - ##########测试删除用户##########
+2019-10-30 18:15:15,270 - test - INFO - **********删除指定账户**********
+2019-10-30 18:15:15,343 - test - INFO - uci show usermanage | grep -w "@user_cfg" | grep user_name | grep lct3 | cut -d'[' -f2 | cut -d']' -f1 | awk '{system("cfg.lua del usermanage @user_cfg["$0"] 2")}'
+2019-10-30 18:15:16,826 - test - INFO - cfg.lua show usermanage | grep lct3
+2019-10-30 18:15:17,159 - test - INFO - ##########测试用户登录##########
+2019-10-30 18:15:17,160 - test - INFO - **********SSH disconnect OK**********
+2019-10-30 18:15:24,232 - test - INFO - **********SSH connect OK**********

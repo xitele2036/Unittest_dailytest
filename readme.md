@@ -1,0 +1,1 @@
+├─autoframework│  ├─case│  │  ├─commands│  │  └─pages│  ├─common│  ├─config│  ├─data│  ├─driver│  ├─fw│  ├─report│  │  ├─log│  │  ├─pictures│  │  └─html│  ├─testcase│  │  ├─commands│  │  ├─pages│  │  ├─security│  ├─run_case.py│  ├─readme.md
